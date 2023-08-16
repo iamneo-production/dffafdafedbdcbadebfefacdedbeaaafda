@@ -39,7 +39,7 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['ChromeHeadless'],
     browserNoActivityTimeout: 120000,
-    CustomChromeHeadless: { base: "ChromeHeadless", flags: ['--no-sandbox'] },
+    CustomChromeHeadless: { base: "ChromeHeadless", flags: ['--no-sandbox','--remote-debugging-port=9222'] },
     singleRun: true,
     restartOnFileChange: false
   });
