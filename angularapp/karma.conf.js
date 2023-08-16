@@ -1,3 +1,4 @@
+
 const puppeteer = require('puppeteer');
 process.env.CHROME_BIN = puppeteer.executablePath();
 module.exports = function (config) {
@@ -47,4 +48,3 @@ module.exports = function (config) {
     restartOnFileChange: false
   });
 };
-
