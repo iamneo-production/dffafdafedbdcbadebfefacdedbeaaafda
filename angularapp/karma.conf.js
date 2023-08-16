@@ -1,4 +1,5 @@
-process.env.CHROME_BIN = require('puppeteer').executablePath()
+const puppeteer = require('puppeteer');
+process.env.CHROME_BIN = puppeteer.executablePath();
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -36,12 +37,6 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['ChromeHeadless'],
-    customLaunchers: {
-      Chrome_without_security: {
-        base: 'Chrome',
-        flags: ['--disable-web-security', '--disable-site-isolation-trials']
-      }
-    },
     singleRun: true,
     restartOnFileChange: false
   });
