@@ -1,3 +1,4 @@
+
 const puppeteer = require('puppeteer');
 process.env.CHROME_BIN = puppeteer.executablePath();
 module.exports = function (config) {
@@ -36,7 +37,13 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['ChromeHeadless'],
+    browsers: ['CustomChromeHeadless'],
+    customLaunchers: {
+      CustomChromeHeadless: {
+        base: 'Chrome',
+        flags: ['--headless','--disable-gpu','--remote-debugging-port=9222','--no-sandbox', '--disable-setuid-sandbox'],
+      },
+    },
     singleRun: true,
     restartOnFileChange: false
   });
