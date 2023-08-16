@@ -39,12 +39,7 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['ChromeHeadless'],
     browserNoActivityTimeout: 120000,
-    customLaunchers:{
-      HeadlessChrome:{
-        base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
-      }
-    },
+    CustomChromeHeadless: { base: "ChromeHeadless", flags: ['--no-sandbox'] },
     singleRun: true,
     restartOnFileChange: false
   });
