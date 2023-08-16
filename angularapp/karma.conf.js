@@ -38,11 +38,10 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['CustomChromeHeadless'],
     customLaunchers: {
-      CustomChromeHeadless: {
+      Chrome_without_security: {
         base: 'Chrome',
-        flags: ['--headless','--disable-gpu','--remote-debugging-port=9222','--no-sandbox', '--disable-setuid-sandbox'],
+        flags: ['--disable-web-security', '--disable-site-isolation-trials']
       },
-    },
     singleRun: true,
     restartOnFileChange: false
   });
